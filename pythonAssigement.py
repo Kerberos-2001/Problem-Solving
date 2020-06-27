@@ -167,3 +167,124 @@ def removeOdd(string):
 quest10 = input('return the even value from the string >> ')
 print()
 print(removeOdd(quest10))
+
+# 11) Write a Python program to count the occurrences of each word in a given sentence.
+
+
+def countWord(string):
+    numString = {}
+    string = string.split(' ')
+
+    for i in string:
+        keys = numString.keys()
+        if i not in keys:
+            numString[i] = 1
+        else:
+            numString[i] += 1
+    return numString
+
+
+quest11 = input('Count the occurrences of each word in given sentence >> ')
+print()
+print(countWord(quest11))
+
+# 12) Write a Python script that takes input from the user and displays that input back in upper and lower cases.
+
+
+def stringCasing(string):
+    return (string.upper(), string.lower())
+
+
+quest12 = input('Enter the string >> ')
+print()
+print('The string you have enter into upper case >> '+stringCasing(quest12)[0])
+print('The string you have enter into lower case >> '+stringCasing(quest12)[1])
+
+
+# 13) Write a Python program that accepts a comma separated sequence of words as input and prints the unique words in sorted form (alphanumerically).
+
+def alphaSort(string):
+    string = string.split(',')
+    string.sort()
+    return string
+
+
+quest13 = input(
+    'Sequnce of word as input seprated by comma, to print sorted from alphanumerically >> ')
+print()
+print(alphaSort(quest13))
+
+# 14) Write a Python function to create the HTML string with tags around the word(s).
+
+
+def add_tags(tag, string):
+    return '<'+tag+'>'+string+'</'+tag+'>'
+
+
+quest14 = input('Warp you text in html tag >> ')
+tag = input('tag you wanna warp on >>')
+print()
+print(add_tags(tag, quest14))
+
+# 15) Write a Python function to insert a string in the middle of a string.
+
+
+def insert_sting_middle(string, text):
+    countString = len(string)
+    half_of_string = int(countString / 2)
+    return string[:half_of_string]+text+string[half_of_string:]
+
+
+quest15 = input('Wrap you string inside string >> ')
+text = input('String you wanna warp with >> ')
+print()
+print(insert_sting_middle(text, quest15))
+
+# 16) Write a Python program to sum all the items in a list.
+
+
+def sumList(numbers):
+    try:
+        numbers = numbers.split(' ')
+        sum_value = sum([int(num) for num in numbers])
+        return sum_value
+    except:
+        return 'The value must be number and seprated by space'
+
+
+quest16 = input('Enter list of numbers, sperate with space >> ')
+print()
+print(sumList(quest16))
+
+# 17) Write a Python program to multiplies all the items in a list.
+
+
+def multiply(numbers):
+    try:
+        numbers = numbers.split(' ')
+        values = [int(num) for num in numbers]
+        mun = 1
+        for i in values:
+            mun *= i
+        return mun
+    except:
+        return 'The value must be number and seprated by space'
+
+
+quest17 = input('Enter list of numbers, sperate with space >> ')
+print()
+print(multiply(quest17))
+
+# 18) Write a Python program to get the largest number from a list.
+
+
+def Largest(numbers):
+    numbers = numbers.split(' ')
+    numbers = [int(num) for num in numbers]
+    numbers.sort()
+    return numbers[len(numbers)-1]
+
+
+quest18 = input('Enter list of numbers, sperate with space >> ')
+print()
+print(Largest(quest18))
