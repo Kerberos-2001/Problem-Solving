@@ -633,3 +633,7 @@ sList=[1, 50, 6, 10, 2, 0]
 sort=lambda a: a.sort()
 sort(sList)
 print(sList)
+
+quest=input('Enter list of numbers, sperate with space >> ')
+print()
+print(multiply(quest))
