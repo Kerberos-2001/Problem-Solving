@@ -288,3 +288,348 @@ def Largest(numbers):
 quest18 = input('Enter list of numbers, sperate with space >> ')
 print()
 print(Largest(quest18))
+
+# 19) Write a Python program to get the smallest number from a list.
+
+
+def Smallest(numbers):
+    numbers = numbers.split(' ')
+    numbers = [int(num) for num in numbers]
+    numbers.sort()
+    return numbers[0]
+
+
+quest19 = input('Enter list of numbers, sperate with space >> ')
+print()
+print(Smallest(quest19))
+
+# 20) Write a Python program to count the number of strings where the string length is 2 or more and the first and last character are same from a given list of strings.
+
+
+def conditionCount(string):
+    count = 0
+    string = string.split(',')
+    for i in string:
+        if len(i) > 2 and i[:1] == i[-1:]:
+            count += 1
+    return count
+
+
+quest20 = input('Enter list of word sperate them by comma >> ')
+print()
+print(conditionCount(quest20))
+
+# 21) Write a Python program to get a list, sorted in increasing order by the last element in each tuple from a given list of non-empty tuples.
+
+
+def sortTuple(unsorted):
+    unsorted = unsorted.split(',')
+    sorting = [tuple(sort) for sort in unsorted]
+    sorting.sort()
+    return sorting
+
+
+quest21 = input('Enter tuples sperated by commas >> ')
+print()
+print(sortTuple(quest21))
+
+# 22) Write a Python program to remove duplicates from a list.
+
+
+def removeDuplicate(sList):
+    sList = sList.split(' ')
+    usList = []
+    for i in sList:
+        if i not in usList:
+            usList.append(i)
+    return usList
+
+
+quest22 = input('Enter list of word sperated by space >> ')
+print()
+print(removeDuplicate(quest22))
+
+# 23) Write a Python program to check a list is empty or not.
+
+
+def checkList(sList):
+    sList = sList.split()
+    if len(sList) <= 0:
+        return 'The list is empty'
+    else:
+        return 'The list is not empty'
+
+
+quest23 = input('Enter item in list sperated by space >> ')
+print()
+print(checkList(quest23))
+
+# 24) Write a Python program to clone or copy a list.
+
+
+def copyList(sList):
+    new_list = sList()
+    return new_list
+
+
+print()
+print('This is copyed list' + copyList([1, 2, 3, 4, 5]))
+
+# 25) Write a Python program to check whether all dictionaries in a list are empty or not.
+
+
+def inside_list(objList):
+    for i in objList:
+        if len(i) > 0:
+            return True
+        else:
+            return False
+
+
+print()
+print(inside_list([{}, {}, {}]))
+print(inside_list([{1, 2}, {}, {}]))
+
+
+# 26. Write a Python program to insert a given string at the beginning of all items in a list.
+
+def insertString(slist, string):
+    slist = slist.split()
+    for i in range(len(string)-1):
+        slist[i] = str(string+slist[i])
+    return slist
+
+
+quest26 = input('Enter input list of word seprated by space >> ')
+text = input('enter string you wanna add >> ')
+print()
+print(insertString(quest26, text))
+
+# 27) Write a Python program to replace the last element in a list with another list.
+
+
+def replaceChar(fList, sList):
+    return fList[:-1]+sList
+
+
+print()
+print(replaceChar([1, 2, 3, 4, 5], [6, 7, 8, 9, 10]))
+
+
+def addKey(norDict):
+    keys = list(norDict.keys())
+    value = list(norDict.values())
+    if (keys[-1:][0]+1) not in keys:
+        norDict[keys[-1:][0]+1] = value[-1:][0]+10
+        return norDict
+
+
+print()
+print(addKey({1: 10, 2: 20}))
+
+# 29. Write a Python script to concatenate following dictionaries to create a new one.
+
+
+def dict_concat():
+    new_dic = {}
+    dic1 = {1: 10, 2: 20}
+    dic2 = {3: 30, 4: 40}
+    dic3 = {5: 50, 6: 60}
+    keys = list(dic1.keys()) + list(dic2.keys()) + list(dic3.keys())
+    values = list(dic1.values()) + list(dic2.values()) + list(dic3.values())
+
+    for i in range(len(keys)-1):
+        new_dic[keys[i]] = values[i]
+    return new_dic
+
+
+print()
+print(dict_concat())
+
+# 30) Write a Python script to check whether a given key already exists in a dictionary.
+
+
+def dict_check(string):
+    dic = {'1': 'prayag', '2': 'piya'}
+    if string in dic.keys():
+        return True
+    else:
+        return False
+
+
+quest30 = input('Enter key to check >> ')
+print()
+print(dict_check(quest30))
+
+# 31) Write a Python program to iterate over dictionaries using for loops.
+
+
+def iterate_dict(dic):
+    key, value = dic.items()
+    for i in key:
+        print('Key '+i + ' Value' + dic[i])
+
+
+print()
+iterate_dict({1: 2, 3: 4, 5: 6, 7: 8})
+
+# 32) Write a Python script to generate and print a dictionary that contains a number (between 1 and n) in the form
+
+
+def createDic(n):
+    dic = {}
+    for i in range(1, n+1):
+        dic[i] = i*i
+    return dic
+
+
+quest32 = input('enter a range >> ')
+print()
+print(createDic(int(quest32)))
+
+# 33) Write a Python script to print a dictionary where the keys are numbers between 1 and 15 (both included) and the values are square of keys
+
+
+def squareDic():
+    dic = {}
+    for i in range(1, 16):
+        dic[i] = i**i
+    print(dic)
+
+
+print()
+squareDic()
+
+# 34) Write a Python script to merge two Python dictionaries.
+
+
+def mergeDic(dic1, dic2):
+    new_dic = dic1
+    for key, value in dic2.items():
+        new_dic[key] = value
+    return new_dic
+
+
+print()
+print({1: 2, 2: 3}, {4: 5, 6: 7})
+
+# 35) Write a Python program to iterate over dictionaries using for loops.
+
+print()
+iterate_dict({'prayag': 'piya', '1': 2, '5': 6})
+
+# 36) Write a Python program to sum all the items in a dictionary.
+
+
+def sumValue(dic):
+    return sum(dic.values())
+
+
+print()
+print(1: 10, 3: 30, 2: 20, 4: 40)
+
+# 37) Write a Python program to multiply all the items in a dictionary.
+
+
+def multiplyValue(dic):
+    value = dic.values()
+    mun = 1
+    for i in value:
+        mun *= i
+    return mun
+
+
+print()
+print(multiplyValue({1: 2, 3: 40, 5: 3, 6: 7}))
+
+# 38) Write a Python program to remove a key from a dictionary.
+
+
+def removeKey(dic, key):
+    del dic[key]
+    return dic
+
+
+print({'1': 3, 'prayag': 'piya', '5': 20})
+key = input('Enter key you wanna delate >> ')
+print()
+print(removeKey({'1': 3, 'prayag': 'piya', '5': 20}, key))
+
+
+# 39. Write a Python program to unpack a tuple in several variables.
+
+def unpackTuple(smallbracket):
+    data1, data2, data3 = smallbracket
+    print('unpacked tuple = ' + data1 + data2 + data3)
+
+
+print()
+unpackTuple(('prayag', 5, True))
+
+# 40) Write a Python program to add an item in a tuple.
+
+
+def addindex(tupl, index):
+    tupl = tupl+(index,)
+    return tupl
+
+
+print()
+print(addindex((1, 2, 3, 4, 5), 'prayag'))
+
+# 41) Write a Python program to convert a tuple to a string.
+
+
+def convertTuple(tup):
+    string = ''.join(tup)
+    return string
+
+
+print()
+print(convertTuple(('p', 'r', 'a', 'y', 'a', 'g'))
+
+# 42) Write a Python program to convert a list to a tuple.
+
+def tupleBack(sList):
+    return tuple(sList)
+
+print()
+print(tupleBack([1, 2, 3, 4, 5, 6]))
+
+# 43) Write a Python program to remove an item from a tuple.
+
+def remveItem(tup, item):
+    tup=list(tup)
+    tup.remove(item)
+    tup=tuple(tup)
+    return tup
+
+print((1, 2, 3, 4, 5, 6))
+item=int(input('Item you wanna remove >> '))
+print()
+print(remveItem((1, 2, 3, 4, 5, 6), item))
+
+
+# ---------
+# FUNCTION
+# ---------
+
+def maxNumber(num1, num2, num3):
+    if num1 > num2 and num1 > num3:
+        return num1
+    elif num2 > num3 and num2 > num1:
+        return num2
+    else:
+        return num3
+
+num1=int(input('Enter a number >> '))
+num2=int(input('Enter a number >> '))
+num2=int(input('Enter a number >> '))
+print()
+print(maxNumber(num1, num2, num3))
+
+
+sList=[1, 50, 6, 10, 2, 0]
+sort=lambda a: a.sort()
+sort(sList)
+print(sList)
